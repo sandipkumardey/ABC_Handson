@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::selection {
+  background-color: #5eead4;
+  color: #000000;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Optimize paint and layout operations */
+.nav-indicator {
+  will-change: width;
+}
+
+/* Optimize animations */
+@layer utilities {
+  .transition-transform {
+    will-change: transform;
+  }
+}
+
+/* Reduce layout shifts */
+main {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 500px;
+}
+
